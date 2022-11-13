@@ -88,6 +88,7 @@ redis-cli ping
 - LOAD THE DATA
 ```sh
 ./bin/ycsb load redis -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p "redis.host=127.0.0.1" -p "redis.port=6379" > radis_load_out.dat
+## if this is not changing the operationcount, then hardcode the value (1000000) in the workloads/workloada file, then remove the parameter from the command.
 
 ### This runs 1M operations of 1M readcount and stores the output to radis_load_out.dat
 ```
@@ -95,38 +96,14 @@ redis-cli ping
 ```sh
 ./bin/ycsb run redis -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p "redis.host=127.0.0.1" -p "redis.port=6379" > radis_run_out.dat
 
+## if this is not changing the operationcount, then hardcode the value (1000000) in the workloads/workloada file, then remove the parameter from the command.
+
 ### This runs 1M operations of 1M readcount and stores the output to radis_run_out.dat
 ```
 - Belwo is the example of the output
 > This out out can be used to compare with
 > other databases
 
-```sh
-[OVERALL], RunTime(ms), 521
-[OVERALL], Throughput(ops/sec), 1919.3857965451057
-[TOTAL_GCS_Copy], Count, 4
-[TOTAL_GC_TIME_Copy], Time(ms), 10
-[TOTAL_GC_TIME_%_Copy], Time(%), 1.9193857965451053
-[TOTAL_GCS_MarkSweepCompact], Count, 0
-[TOTAL_GC_TIME_MarkSweepCompact], Time(ms), 0
-[TOTAL_GC_TIME_%_MarkSweepCompact], Time(%), 0.0
-[TOTAL_GCs], Count, 4
-[TOTAL_GC_TIME], Time(ms), 10
-[TOTAL_GC_TIME_%], Time(%), 1.9193857965451053
-[CLEANUP], Operations, 1
-[CLEANUP], AverageLatency(us), 653.0
-[CLEANUP], MinLatency(us), 653
-[CLEANUP], MaxLatency(us), 653
-[CLEANUP], 95thPercentileLatency(us), 653
-[CLEANUP], 99thPercentileLatency(us), 653
-[INSERT], Operations, 1000
-[INSERT], AverageLatency(us), 355.182
-[INSERT], MinLatency(us), 97
-[INSERT], MaxLatency(us), 29791
-[INSERT], 95thPercentileLatency(us), 1399
-[INSERT], 99thPercentileLatency(us), 4183
-[INSERT], Return=OK, 1000
-```
 # Now download and run [mongo db - Original installation guide](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
 
 - Install gnupg [GNU Privacy Guard]: https://gnupg.org/ 
@@ -198,21 +175,29 @@ local   0.000GB
 - This command will LOAD the records with Asynchronos
 ```sh
 ./bin/ycsb load mongodb-async -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_load_out.dat
+
+## if this is not changing the operationcount, then hardcode the value (1000000) in the workloads/workloada file, then remove the parameter from the command.
 ```
 
 ### RUN THE OPERATIONS - ASYNC
 - This command will RUN the records with Asynchronos
 ```sh
 ./bin/ycsb run mongodb-async -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_run_out.dat
+
+## if this is not changing the operationcount, then hardcode the value (1000000) in the workloads/workloada file, then remove the parameter from the command.
 ```
 
 ### LOAD THE DATA - SYNC
 - This command will LOAD the records with Synchronos
 ```sh
 ./bin/ycsb load mongodb -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_load_out.dat
+
+## if this is not changing the operationcount, then hardcode the value (1000000) in the workloads/workloada file, then remove the parameter from the command.
 ```
 ### RUN THE OPERATIONS - SYNC
 - This command will RUN the records with Synchronos
 ```SH
 ./bin/ycsb run mongodb -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_run_out.dat
+
+## if this is not changing the operationcount, then hardcode the value (1000000) in the workloads/workloada file, then remove the parameter from the command.
 ```
