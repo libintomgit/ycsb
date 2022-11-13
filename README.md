@@ -1,4 +1,4 @@
-# ycsb
+# YCSB
 YCS BENCHMARKING
 
 # Install python2 and make it default
