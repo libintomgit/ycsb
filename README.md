@@ -184,7 +184,7 @@ local   0.000GB
 
 - This command will LOAD the records with Asynchronos
 ```sh
-./bin/ycsb load mongodb-async -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_load_out.dat
+./bin/ycsb load mongodb-async -s -P workloads/workloada -p recordcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_load_out.dat
 
 ## if this is not changing the operationcount, then hardcode the value (1000000) in the workloads/workloada file, then remove the parameter from the command.
 ```
@@ -192,7 +192,7 @@ local   0.000GB
 ### RUN THE OPERATIONS - ASYNC
 - This command will RUN the records with Asynchronos
 ```sh
-./bin/ycsb run mongodb-async -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_run_out.dat
+./bin/ycsb run mongodb-async -s -P workloads/workloada -p recordcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_run_out.dat
 
 ## if this is not changing the operationcount, then hardcode the value (1000000) in the workloads/workloada file, then remove the parameter from the command.
 ```
@@ -200,14 +200,14 @@ local   0.000GB
 ### LOAD THE DATA - SYNC
 - This command will LOAD the records with Synchronos
 ```sh
-./bin/ycsb load mongodb -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_load_out.dat
+./bin/ycsb load mongodb -s -P workloads/workloada -p recordcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_load_out.dat
 
 ## if this is not changing the operationcount, then hardcode the value (1000000) in the workloads/workloada file, then remove the parameter from the command.
 ```
 ### RUN THE OPERATIONS - SYNC
 - This command will RUN the records with Synchronos
 ```SH
-./bin/ycsb run mongodb -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_run_out.dat
+./bin/ycsb run mongodb -s -P workloads/workloada -p recordcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_run_out.dat
 
 ## if this is not changing the operationcount, then hardcode the value (1000000) in the workloads/workloada file, then remove the parameter from the command.
 ```
