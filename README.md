@@ -93,6 +93,16 @@ redis-cli ping
 > ubuntu@ip-172-31-42-28:~/ycsb_assignment/actual-db-output/ycsb$ redis-cli ping
 > PONG
 ```
+- If not working do this
+```sh
+curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+
+sudo apt-get update
+
+sudo apt-get install redis
+```
 - Clread data in redis memory using the below command
 ```sh
 redis-cli FLUSHALL
