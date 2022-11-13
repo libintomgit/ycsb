@@ -120,22 +120,20 @@ free -m
 ```sh
 sudo apt-get install gnupg
 ```
-- Add apt key for Mongo DB
+- Insall libssl1.1
+```sh
+echo "deb http://security.ubuntu.com/ubuntu focal-security main" | sudo tee /etc/apt/sources.list.d/focal-security.list
+
+sudo apt-get update
+
+```
+- GPG
 ```sh
 wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
 ```
-- Check your OS Release details
+- Add 
 ```sh
-lsb_release -dc
-
-###output would be
-ubuntu@ip-172-31-42-28:~$ lsb_release -dc
-Description:    Ubuntu 22.04.1 LTS
-Codename:       jammy
-```
-- Below change jammy to your distribution name
-```sh
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
 ```
 ```sh
 sudo apt-get update
