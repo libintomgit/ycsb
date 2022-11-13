@@ -59,7 +59,7 @@ redis-cli ping
 this should respod PONG - then its wroking
 
 
-# Now run the YCSB workload
+# Now run the YCSB workload on Redis DB
 LOAD THE DATA
 ./bin/ycsb load redis -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p "redis.host=127.0.0.1" -p "redis.port=6379" > radis_load_out.dat
 
@@ -97,7 +97,7 @@ admin   0.000GB
 config  0.000GB
 local   0.000GB
 
-# Now run the YCSB workload for Mongo
+# Now run the YCSB workload on Mongo DB
 LOAD THE DATA - ASYNC
 
 ./bin/ycsb load mongodb-async -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_load_out.dat
