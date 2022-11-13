@@ -7,7 +7,6 @@ YCS BENCHMARKING - [Original Referance - brianfrankcooper YCSB](https://github.c
 ## Below steps to make python2 default
 ```sh
 ls /usr/bin/python*
-sudo update-alternatives --list python
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
 sudo update-alternatives --list python
