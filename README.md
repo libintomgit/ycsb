@@ -1,5 +1,5 @@
 # YCSB
-YCS BENCHMARKING
+YCS BENCHMARKING - Original Referance: https://github.com/brianfrankcooper/YCSB
 
 # Install python2 and make it default
 ### Assuming python2 is installed
@@ -17,9 +17,14 @@ sudo update-alternatives --config python
 ```
 
 # Install Java (not clearly verified - hope this is done in the class)
+- Install Java
+```sh
 sudo apt install default-jdk
+```
+- Check java version
+```sh
 javac -version
-
+```
 # Install Maven (not clearly verified - hope this is done in the class)
 ```sh
 sudo apt install default-jdk
