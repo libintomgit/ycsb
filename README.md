@@ -65,3 +65,50 @@ LOAD THE DATA
 
 RUN THE DATA
 ./bin/ycsb run redis -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p "redis.host=127.0.0.1" -p "redis.port=6379" > radis_run_out.dat
+
+# Now download and run mongo db https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+sudo apt-get install gnupg
+
+wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+
+check your release
+lsb_release -dc
+
+below change focal to your distribution name
+
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+
+sudo apt-get update
+
+sudo apt-get install -y mongodb-org
+
+Change the bindign in the configuration file (bindIp: 0.0.0.0)
+
+sudo nano /etc/mongod.conf
+
+sudo systemctl start mongod
+
+sudo systemctl status mongod
+
+mongo
+
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+
+# Now run the YCSB workload for Mongo
+LOAD THE DATA - ASYNC
+
+./bin/ycsb load mongodb-async -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_load_out.dat
+
+RUN THE OPERATIONS - ASYNC
+./bin/ycsb run mongodb-async -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_run_out.dat
+
+LOAD THE DATA - SYNC
+
+./bin/ycsb load mongodb -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_load_out.dat
+
+RUN THE OPERATIONS - SYNC
+
+./bin/ycsb run mongodb -s -P workloads/workloada -p readcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_run_out.dat
