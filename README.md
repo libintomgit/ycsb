@@ -2,27 +2,32 @@
 YCS BENCHMARKING
 
 # Install python2 and make it default
-assuming python2 is installed
+### Assuming python2 is installed
 
-below steps to make python2 default
+## Below steps to make python2 default
+```sh
 ls /usr/bin/python*
 sudo update-alternatives --list python
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 2
 sudo update-alternatives --list python
 sudo update-alternatives --config python
-now enter the selection number of python 2 to make it default
 
+## now enter the selection number of python 2 to make it default
+```
 
 # Install Java (not clearly verified - hope this is done in the class)
 sudo apt install default-jdk
 javac -version
 
 # Install Maven (not clearly verified - hope this is done in the class)
-sudo apt install maven
-mvn -version
-
-configure MAV environments
+```sh
+sudo apt install default-jdk
+```
+```sh
+javac -version
+```
+- configure MAVEN environments
 
 sudo vim /etc/profile.d/maven.sh
 
