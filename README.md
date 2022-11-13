@@ -1,5 +1,5 @@
 # YCSB
-YCS BENCHMARKING - [Original Referance]: https://github.com/brianfrankcooper/YCSB
+YCS BENCHMARKING - [Original Referance - brianfrankcooper YCSB](https://github.com/brianfrankcooper/YCSB)
 
 # Install python2 and make it default
 ### Assuming python2 is installed
@@ -66,7 +66,7 @@ tar xfvz ycsb-0.17.0.tar.gz
 ```sh
 cd ycsb-0.17.0
 ```
-# Downalod and Install [Radis DB - Original installation guide]: https://redis.io/docs/getting-started/installation/install-redis-on-linux/
+# Downalod and Install [Radis DB - Original installation guide](https://redis.io/docs/getting-started/installation/install-redis-on-linux/)
 - Install the LSB Linux Standard Base
 ```sh
 sudo apt install lsb-release
@@ -127,7 +127,7 @@ redis-cli ping
 [INSERT], 99thPercentileLatency(us), 4183
 [INSERT], Return=OK, 1000
 ```
-# Now download and run [mongo db - Original installation guide]: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+# Now download and run [mongo db - Original installation guide](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
 
 - Install gnupg [GNU Privacy Guard]: https://gnupg.org/ 
 ```sh
