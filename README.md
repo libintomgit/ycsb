@@ -83,6 +83,16 @@ redis-cli ping
 > ubuntu@ip-172-31-42-28:~/ycsb_assignment/actual-db-output/ycsb$ redis-cli ping
 > PONG
 ```
+- Clread data in redis memory using the below command
+```sh
+redis-cli FLUSHALL
+
+## It should return OK
+```
+- Then check if the system memory is clreared
+```sh
+free -m
+```
 
 # Now run the YCSB workload on Redis DB
 - LOAD THE DATA
