@@ -134,7 +134,7 @@ free -m
 > This out out can be used to compare with
 > other databases
 
-# Now download and run [mongo db - Original installation guide](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
+# Download and run [mongo db - Original installation guide](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/)
 
 - Install gnupg [GNU Privacy Guard]: https://gnupg.org/ 
 ```sh
@@ -197,7 +197,7 @@ local   0.000GB
 ### Within the selected DB enter
 > db.dropDatabase()
 ```
-# Now run the YCSB workload on Mongo DB
+# Run the YCSB workload on Mongo DB
 ### LOAD THE DATA - ASYNC
 
 - This command will LOAD the records with Asynchronos
@@ -228,4 +228,18 @@ local   0.000GB
 ./bin/ycsb run mongodb -s -P workloads/workloada -p recordcount=1000000 -p operationcount=1000000 -p mongodb.url=mongodb://localhost:27017/ycsb?w=0 > ./mongo_run_out.dat
 
 ## if this is not changing the operationcount, then hardcode the value (1000000) in the workloads/workloada file, then remove the parameter from the command.
+```
+# Install MEMCACHED
+- Install memcachd
+```sh
+sudo apt-get install memcached
+```
+# Run the YCSB workload on MEMCACHED
+- LOAD
+```sh
+./bin/ycsb load memcached -s -P workloads/workloada -p recordcount=10000 -p operationcount=10000 -p "memcached.hosts=127.0.0.1" > outputLoad.txt
+```
+- RUN
+```sh
+./bin/ycsb run memcached -s -P workloads/workloada -p recordcount=10000 -p operationcount=10000 -p "memcached.hosts=127.0.0.1" > outputRUN.txt
 ```
